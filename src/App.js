@@ -1,7 +1,7 @@
 
 import React from "react";
 import app from "./service/app";
-import { BrowserRouter, Route, Redirect, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import Form from "./pages/form/Form";
 import View from "./pages/view/View";
 import './App.css';
