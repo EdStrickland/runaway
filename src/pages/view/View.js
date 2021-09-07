@@ -9,9 +9,9 @@ function View() {
     <BrowserRouter>
       <div className="View">
         <ul>
-          <li><Link to="/view/table">Table</Link></li>
-          <li><Link to="/view/preview">Preview</Link></li>
-          <li><Link to="/view/process">Process</Link></li>
+          <li><Link to={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/table'}>Table</Link></li>
+          <li><Link to={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/preview'}>Preview</Link></li>
+          <li><Link to={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/process'}>Process</Link></li>
         </ul>
       </div>
       <Route path={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/table'} pathname="table" exact={true} component={ViewTable} />
