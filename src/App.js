@@ -25,8 +25,8 @@ class App extends React.Component {
         <div>
           <h1>{this.routeName}</h1>
         </div>
-        <Route path="/form" pathname="form" exact={true} component={Form} />
-        <Route path="/view" pathname="view" component={View} />
+        <Route path={process.env.NODE_ENV === 'development' ? '/form' : process.env.PUBLIC_URL + '/form'} pathname="form" exact={true} component={Form} />
+        <Route path={process.env.NODE_ENV === 'development' ? '/view' : process.env.PUBLIC_URL + '/view'} pathname="view" component={View} />
         <Redirect from="/" to="/form" />
       </BrowserRouter>
     );

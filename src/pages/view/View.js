@@ -14,9 +14,9 @@ function View() {
           <li><Link to="/view/process">Process</Link></li>
         </ul>
       </div>
-      <Route path="/view/table" pathname="table" exact={true} component={ViewTable} />
-      <Route path="/view/preview" pathname="preview" exact={true} component={ViewPreview} />
-      <Route path="/view/process" pathname="process" exact={true} component={ViewProcess} />
+      <Route path={process.env.NODE_ENV === 'development' ? '/view/table' : process.env.PUBLIC_URL + '/view/table'} pathname="table" exact={true} component={ViewTable} />
+      <Route path={process.env.NODE_ENV === 'development' ? '/view/preview' : process.env.PUBLIC_URL + '/view/preview'} pathname="preview" exact={true} component={ViewPreview} />
+      <Route path={process.env.NODE_ENV === 'development' ? '/view/process' : process.env.PUBLIC_URL + '/view/process'} pathname="process" exact={true} component={ViewProcess} />
       <Redirect from="/view" to="/view/table" />
     </BrowserRouter>
   );
