@@ -17,7 +17,7 @@ function View() {
       <Route path={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/table'} pathname="table" exact={true} component={ViewTable} />
       <Route path={process?.env?.NODE_ENV === 'development' ? '/view/preview' : '/runaway/view/preview'} pathname="preview" exact={true} component={ViewPreview} />
       <Route path={process?.env?.NODE_ENV === 'development' ? '/view/process' : '/runaway/view/process'} pathname="process" exact={true} component={ViewProcess} />
-      <Redirect from="/view" to={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/table'} />
+      <Redirect from={process?.env?.NODE_ENV === 'development' ? '/view' : '/runaway/view'} to={process?.env?.NODE_ENV === 'development' ? '/view/table' : '/runaway/view/table'} />
     </BrowserRouter>
   );
 }
